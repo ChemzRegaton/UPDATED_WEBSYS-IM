@@ -1,0 +1,726 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Exo 2", sans-serif;
+    background: rgb(0, 0, 0);
+    background-image: url('../images/image_1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navigation Styles */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #5cd4f1;
+    color: rgb(0, 0, 0);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    align-items: center;
+    gap: 5rem;
+    z-index: 1000;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    font-weight: normal;
+}
+
+.nav li {
+    color: #000;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover, .nav .dropbtn:hover {
+    background-color: #01fe5e;
+    color: #165bfb;
+    border-radius: 4px;
+    text-shadow: none; 
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-style: inherit;
+    font-weight: bolder;
+}
+
+.dropbtn {
+    margin-top: -.5rem;
+    font-size: 10rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dashboard {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    margin-top: -20rem;
+}
+
+.bg {
+    background-color: #acbec3;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-left: 15rem;
+    
+}
+
+.login-form,
+.signup-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-left: 20rem;
+    margin-right: -20rem;
+    height: fit-content;
+}
+
+.login-form h2,
+.signup-form h2 {
+    margin-bottom: 1rem;
+}
+
+.login-form input,
+.signup-form input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.login-form button,
+.signup-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #5cd4f1;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+    background-color: #4ab3c6;
+}
+
+.signup-link {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+.signup-link a {
+    color: #5cd4f1;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.signup-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.common-container {
+    background-color: rgb(81, 196, 250, .80);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 90%;
+    margin: 5vh 5%;
+    position: center;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+    text-align: left;
+}
+
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 4rem);
+}
+
+.title-wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    transform: skew(0, -10deg);
+}
+
+.top-title {
+    order: 1;
+    text-align: center;
+    display: block;
+    color: #fff;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+}
+
+.bottom-title {
+    order: 3;
+    text-align: center;
+    display: block;
+    color: #fff;
+    font-size: clamp(1rem, 4vw, 2rem);
+    margin-top: -10rem;
+    padding-left: 2rem;
+}
+
+.sweet-title {
+    order: 2;
+    color: #fde9ff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(3rem, 10vw, 13rem);
+    line-height: 0.75em;
+    text-align: center;
+    text-shadow: 3px 1px 1px #4af7ff, 2px 2px 1px #165bfb, 4px 2px 1px #4af7ff,
+        3px 3px 1px #165bfb, 5px 3px 1px #4af7ff, 4px 4px 1px #165bfb,
+        6px 4px 1px #4af7ff, 5px 5px 1px #165bfb, 7px 5px 1px #4af7ff,
+        6px 6px 1px #165bfb, 8px 6px 1px #4af7ff, 7px 7px 1px #165bfb,
+        9px 7px 1px #4af7ff;
+    span {
+        display: block;
+        position: relative;
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+                -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+            z-index: 1;
+        }
+        &:nth-child(1) {
+            padding-right: 2.25rem;
+        }
+        &:nth-child(2) {
+            padding-left: 2.25rem;
+        }
+    }
+}
+
+.search {
+    border-radius: 10px;
+    height: 3rem;
+    width: 20rem;
+}
+
+.actions {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.actions button {
+    width: 20%;
+    padding: 0.75rem;
+    background-color: #2de001;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.actions button:hover {
+    background-color: #4ab3c6;
+}
+
+.table {
+    background-color: rgb(252, 254, 255);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: inherit;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: rgba(29, 240, 255, 1.605);
+}
+
+.patients-table th,
+.patients-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.patients-table th {
+    background-color: #ffffff;
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: rgba(29, 240, 255, 1.605);
+}
+
+.staff-table th,
+.staff-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.staff-table th {
+    background-color: #000000;
+}
+
+.staff-table td {
+    background-color: #00000000;
+}
+
+.table-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.staff-table,
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ddd;
+}
+
+.staff-table th,
+.staff-table td,
+.patients-table th,
+.patients-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.staff-table th,
+.patients-table th {
+    background-color: #f2f2f2;
+}
+
+.ward-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ddd;
+}
+
+.ward-table th,
+.ward-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.ward-table th {
+    background-color: #f2f2f2;
+}
+
+.title2{
+    display: flex;
+}
+
+
+.addpatient{
+    background-color: #000;
+}
+
+
+.inputs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 5px;
+  }
+  
+  .input-text {
+    margin-right: 1rem;
+  }
+  
+.telephoneNumber,
+.fullName,
+.dateOfBirth,
+.sex,
+.maritalStatus,
+.dateRegistered,
+.detailsOfNextOfKin,
+.address {
+  width: 30rem;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.next_telephoneNumber,
+.next_fullName,
+.next_relationship
+.next_address {
+  width: 30rem;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+
+  .staffNumber,
+  .firstName,
+  .middleName,
+  .lastName,
+  .address,
+  .telephoneNumber,
+  .dateOfBirth,
+  .sex,
+  .nationalInsuranceNumber,
+  .currentSalary,
+  .salaryScale,
+  .employmentContract,
+  .hoursWorkedPerWeek,
+  .salaryPayment,
+  .positionHeld {
+    height: 3rem;
+    width: 30rem;
+    padding: 0rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 1rem;
+    font-size: 15px;
+  }
+  
+  
+  .myCheckbox {
+    margin-right: 1rem;
+  }
+  
+  .separate {
+    margin-top: 1rem;
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+  }
+  
+  .actions {
+    margin-top: 1rem;
+  }
+  
+  .cancel,
+  .submit {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .cancel:hover,
+  .submit:hover {
+    background-color: #0056b3;
+  }
+  
+
+/* components/Dropdown.css */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #4caf4f00;
+    color: rgb(0, 0, 0);
+    padding: 0px;
+    margin-top: 4px;
+    font-size: 19px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn-sub {
+    background-color: #4caf4f00;
+    color: rgb(0, 0, 0);
+    padding: 0px;
+    margin-top: 4px;
+    font-size: 21px;
+    border: none;
+    cursor: pointer;
+    margin-left: 17px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3fe745;
+  }
+  
+
+
+ /*Pharma Supply Table*/ 
+  .table-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .supplies-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #ddd;
+  }
+  
+  .supplies-table th,
+  .supplies-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .supplies-table th {
+    background-color: #f2f2f2;
+  }
+
+  .input-text{
+    font-size: 10px;
+    margin: .5rem;
+  }
+
+  .common-container2 {
+    background-color: rgb(81, 196, 250, .80);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 90%;
+    margin: 5vh 5%;
+    position: center;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+    text-align: left;
+
+    justify-content: center;
+}
+
+.common-container3 {
+    background-color: rgb(81, 196, 250, .80);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 90%;
+    margin: 5vh 5%;
+    position: center;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+    text-align: left;
+
+    justify-content: center;
+}
+
+input {
+    width: 20rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .separator {
+    border-bottom: 1px solid #ccc;
+    margin: 0.5em 0;
+  }
+  
+
+  /*Patient Tables CSS*/
+  .inpatient-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+  }
+  
+  .inpatient-table th, .inpatient-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .inpatient-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+
+  .outpatient-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+  }
+  
+  .outpatient-table th, .outpatient-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .outpatient-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+
+  .separator{
+    margin-left: 17px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .supplier-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+  }
+  
+  .supplier-table th,
+  .supplier-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .supplier-table th {
+    background-color: #f4f4f4;
+  }
